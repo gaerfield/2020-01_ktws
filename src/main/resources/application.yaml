@@ -1,0 +1,37 @@
+logging:
+  file:
+    name: payfree.log
+
+### Actuator Endpoints
+management:
+  endpoint:
+    logfile:
+      enabled: true
+    loggers:
+      enabled: true
+    httptrace:
+      enabled: true
+    sessions:
+      enabled: true
+    mappings:
+      enabled: true
+    health:
+      show-details: "ALWAYS"
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+### Spring Session
+spring:
+  datasource:
+    sql-script-encoding: UTF-8
+  #   url: "jdbc:h2:file:~/test;DB_CLOSE_ON_EXIT=FALSE"
+  #   username: sa
+  #   password:
+  #   driverClassName: "org.h2.Driver"
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
