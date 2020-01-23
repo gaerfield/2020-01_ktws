@@ -12,8 +12,10 @@ data class EmployeeId(
         val id: String = UUID.randomUUID().toString()
 ) : Serializable
 
+
 @Entity
-class Employee(
+internal class Employee(
         val name: String,
-        val lastName: String
+        val lastName: String,
+        val title: String
 ) : BaseEntity<EmployeeId> (EmployeeId())

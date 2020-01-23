@@ -6,11 +6,14 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class EmployeeService(
+internal class EmployeeService(
         val employees: EmployeeRepository
 ) {
 
-    @GetMapping("/employee/{id}")
+    @GetMapping("/employees/{id}")
     fun findEmployee(@PathVariable id: EmployeeId) = employees.findById(id)
+
+    @GetMapping("/employees")
+    fun findEmployees() = employees.findAll()
 
 }
