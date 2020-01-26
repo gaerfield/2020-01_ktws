@@ -1,0 +1,32 @@
+GET http://localhost:8080/employees
+Accept: application/json
+
+###
+
+GET http://localhost:8080/employees/1
+Accept: application/json
+
+###
+
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "name": "Homer",
+  "lastName": "Simpson",
+  "title": "Idiot"
+}
+
+###
+
+POST http://localhost:8080/shipment-orders
+Content-Type: application/json
+
+"Bla Bla Bla"
+
+###
+
+GET http://localhost:8080/shipment-orders/3476d524-102c-4382-893e-c1c6e075f9fb
+Accept: application/json
+
+###

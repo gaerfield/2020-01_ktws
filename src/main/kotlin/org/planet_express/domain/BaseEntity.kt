@@ -9,15 +9,19 @@ import javax.persistence.MappedSuperclass
 import javax.persistence.Version
 
 @MappedSuperclass
-open class StandardEntityId(
-        @GeneratedValue(generator = "uuid2")
-        @GenericGenerator(name = "uuid2", strategy = "uuid2")
-        val id: String = UUID.randomUUID().toString()
+open class BaseEntityId(
+        givenId: String? = null
 ) : Serializable {
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    val id: String = givenId ?: UUID.randomUUID().toString()
+
     override fun equals(other: Any?) = when {
+        null == other -> false
+        null == id -> false
         this === other -> true
-        javaClass != other?.javaClass -> false
-        id != (other as StandardEntityId).id -> false
+        javaClass != other.javaClass -> false
+        id != (other as BaseEntityId).id -> false
         else -> true
     }
 
@@ -40,8 +44,7 @@ internal abstract class BaseEntity<T : Serializable>(
     override fun equals(other: Any?) = when {
         this === other -> true
         javaClass != other?.javaClass -> false
-        id != (other as BaseEntity<*>).id -> false
-        else -> true
+        else -> id.equals((other as BaseEntity<*>).id)
     }
 
     override fun hashCode(): Int = id.hashCode()
