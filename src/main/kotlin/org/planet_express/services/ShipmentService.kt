@@ -14,7 +14,6 @@ internal class ShipmentService(
         private val addressRegex = """(?<addressee>.*)\n(?<street>.*)\n.*\n.*\n.*\n.*""".toRegex()
     }
 
-
     @PostMapping("/shipment-orders")
     fun dispatch(@RequestBody destination: String) = parcelRepository.save(
             Parcel(parseAddress(destination))
