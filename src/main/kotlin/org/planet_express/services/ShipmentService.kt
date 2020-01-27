@@ -4,27 +4,33 @@ import org.planet_express.domain.InterstellarAddress
 import org.planet_express.domain.Parcel
 import org.planet_express.domain.ParcelTrackingId
 import org.springframework.web.bind.annotation.*
+import java.lang.IllegalArgumentException
 
 @RestController
 internal class ShipmentService(
         val parcelRepository: ParcelRepository
 ) {
-    // https://spring.io/guides/tutorials/spring-boot-kotlin/
+    companion object {
+        private val addressRegex = """(?<addressee>.*)\n(?<street>.*)\n.*\n.*\n.*\n.*""".toRegex()
+    }
+
 
     @PostMapping("/shipment-orders")
     fun dispatch(@RequestBody destination: String) = parcelRepository.save(
             Parcel(parseAddress(destination))
     ).id
 
-    private fun parseAddress(address: String) : InterstellarAddress {
+    fun parseAddress(address: String) : InterstellarAddress {
+        val match = addressRegex.matchEntire(address) ?: throw IllegalArgumentException("invalidAddress")
+
         return InterstellarAddress(
-                addressee = "little Prince",
-                street = "",
+                addressee = match.groups["addressee"]?.value ?: throw IllegalArgumentException("No addressee given"),
+                street = match.groups["street"]?.value ?: "",
                 number = 12,
-                countryCode = "",
-                planetCode = "",
+                country = "",
+                planet = "",
                 starSystem = "",
-                galaxy = "Alpha Centauri"
+                galaxy = ""
         )
     }
 

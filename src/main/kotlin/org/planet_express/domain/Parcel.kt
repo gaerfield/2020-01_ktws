@@ -12,8 +12,8 @@ data class InterstellarAddress(
         val addressee : String,
         val street: String,
         val number: Int,
-        val countryCode: String,
-        val planetCode: String,
+        val country: String,
+        val planet: String,
         val starSystem: String,
         val galaxy: String
 )

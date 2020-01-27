@@ -1,6 +1,6 @@
 logging:
   file:
-    name: payfree.log
+    name: planetExpress.log
 
 ### Actuator Endpoints
 management:
