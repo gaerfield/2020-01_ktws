@@ -52,7 +52,7 @@ dependencies {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
         exclude(module = "mockito-core")
     }
-    testImplementation("com.ninja-squad:springmockk:1.1.2")
+    testImplementation("com.ninja-squad:springmockk:2.0.0")
 
     // swagger-api
     implementation("io.springfox:springfox-swagger2:2.9.2")

@@ -1,4 +1,4 @@
-package org.planet_express.domain
+package org.movies.domain
 
 import org.hibernate.annotations.GenericGenerator
 import java.io.Serializable
@@ -18,7 +18,6 @@ open class BaseEntityId(
 
     override fun equals(other: Any?) = when {
         null == other -> false
-        null == id -> false
         this === other -> true
         javaClass != other.javaClass -> false
         id != (other as BaseEntityId).id -> false

@@ -26,7 +26,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/shipment-orders/3476d524-102c-4382-893e-c1c6e075f9fb
+GET http://localhost:8080/shipment-orders/3f8b1362-4d80-4491-a21c-f55c8c1834f4
 Accept: application/json
 
 ###

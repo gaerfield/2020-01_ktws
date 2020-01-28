@@ -1,23 +1,4 @@
-insert into Employee(id, version, last_name, name, title) values
-  ('0',0,'Farnsworth', 'Hubert J.', 'Prof'),
-  ('1',0,'Conrad', 'Hermes', null),
-  ('2',0,'Ziodberg', 'John', 'Dr.'),
-  ('3',0,'Leela', 'Turanga', null),
-  ('4',0,'Wong', 'Amy', null),
-  ('5',0,'Rodriguez', 'Bender Bieger', null),
-  ('6',0,'Fry', 'Philip J.', null);
+insert into movie(id, budget, company, country, director, genre, gross, name, rating, released, runtime_In_Min, score, star, votes, writer, year)
+select * from CSVREAD('./src/main/resources/movies.csv');
 
-insert into Parcel(ID, VERSION, DELIVERED, ADDRESSEE, COUNTRY, GALAXY, NUMBER, PLANET, STAR_SYSTEM, STREET, SIZE, KG) values
-  (),
-  (),
-  (),
-  (),
-  (),
-  (),
-  (),
-  (),
-  (),
-  (),
-  (),
-  (),
-  ();
+update movie set version=0 where version is null

@@ -1,4 +1,4 @@
-package org.planet_express
+package org.movies
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -11,7 +11,7 @@ import springfox.documentation.spring.web.plugins.Docket
 import springfox.documentation.swagger2.annotations.EnableSwagger2
 
 @SpringBootApplication
-class PlanetExpressApp {
+class MoviesApp {
 
     @Configuration
     @EnableSwagger2
@@ -26,5 +26,5 @@ class PlanetExpressApp {
 }
 
 fun main(args: Array<String>) {
-    runApplication<PlanetExpressApp>(*args)
+    runApplication<MoviesApp>(*args)
 }
