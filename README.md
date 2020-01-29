@@ -8,6 +8,9 @@ Koans for a kotlin-workshop
 
 After succesful start of the app, you can visit:
 * **database**: http://localhost:8080/h2-console
+    * user: sa
+    * password (keep empty):
+    * database: jdbc:h2:mem:testdb
 * **swagger**: http://localhost:8080/swagger-ui.html
 * **rest-service**: http://localhost:8080/least10
 * use **RestCalls.http** to do requests
