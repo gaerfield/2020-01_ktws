@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions.*
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
+import org.movies.AppConfig
 import org.movies.domain.Movie
 
 internal class MovieServiceTest {
@@ -25,7 +26,7 @@ internal class MovieServiceTest {
             every { findAll() } returns listOf(movie2, movie1)
         }
 
-        val actual = MovieService(repoMock).getTopRated()
+        val actual = MovieService(repoMock, AppConfig()).getTopRated()
         assertAll(
             { assertEquals(MovieService.TitleAndScore("Film1", 1.0), actual[0]) },
             { assertEquals(MovieService.TitleAndScore("Film2", 2.0), actual[1]) }

@@ -1,32 +1,15 @@
-GET http://localhost:8080/employees
+###
+
+GET http://localhost:8080/least10
 Accept: application/json
 
 ###
 
-GET http://localhost:8080/employees/1
+GET http://localhost:8080/config
 Accept: application/json
 
 ###
 
-POST http://localhost:8080/employees
-Content-Type: application/json
-
-{
-  "name": "Homer",
-  "lastName": "Simpson",
-  "title": "Idiot"
-}
-
-###
-
-POST http://localhost:8080/shipment-orders
-Content-Type: application/json
-
-"Bla Bla Bla"
-
-###
-
-GET http://localhost:8080/shipment-orders/3f8b1362-4d80-4491-a21c-f55c8c1834f4
-Accept: application/json
+PUT http://localhost:8080/config?filterAdultRating=true
 
 ###

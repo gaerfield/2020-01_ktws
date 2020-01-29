@@ -1,3 +1,10 @@
+movies:
+  filterAdultRating: false
+  evenEnumsArePossible: TWO
+  complexConfig:
+    id: 1
+    token: token1
+
 logging:
   file:
     name: planetExpress.log
