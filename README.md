@@ -39,7 +39,7 @@ A single release of music, comprising several tracks
 ## Create some new REST-Services
 
 We have Movie-Database and want to gather some trivial infos. Create some new Services in "MovieService", and collect for example:  
-* movies group by rating (0-1, 1-2, 1-3, etc.) and give a count of movies within this groups
+* movies group by score (0-1, 1-2, 2-3, etc.) and give a count of movies within this groups
 * top 10 studios by number of productions
 * directors grouped by number of productions with top 3 by average score, i.e.:
 ```string
@@ -47,7 +47,7 @@ directors with 5 movies:
   Steven Spielberg (avg-score: 5.2), Francis Ford Coppola (avg.-score: 6.1)
 directors with 4 movies: ..
 ```
-* do the previous task with least avg-score instead
+* do the previous task with least average score instead
 * which persons (actors, writers, directors) have acted in multiple roles for the same or for different movies, i.e.:
 ```string
 Woody Allen:
