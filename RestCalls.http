@@ -13,3 +13,8 @@ Accept: application/json
 PUT http://localhost:8080/config?filterAdultRating=true
 
 ###
+
+GET http://localhost:8080/multiTalents
+Accept: application/json
+
+###

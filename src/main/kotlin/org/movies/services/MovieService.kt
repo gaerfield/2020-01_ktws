@@ -33,4 +33,37 @@ internal class MovieService(
     @PutMapping("/config")
     fun updateApplicationConfig(@RequestParam filterAdultRating: Boolean) { appConfig.filterAdultRating = filterAdultRating }
 
+
+    data class PersonAndHisMovies(val name: String) {
+        val director = mutableSetOf<String>()
+        val writer = mutableSetOf<String>()
+        val star = mutableSetOf<String>()
+
+        override fun toString() = """
+            name: $name
+              directed: ${director.sortedBy { it }}
+              writer:   ${writer.sortedBy { it }}
+              star:     ${star.sortedBy { it }}
+        """.trimIndent()
+
+    }
+
+    val persons = mutableMapOf<String, PersonAndHisMovies>()
+
+    @GetMapping("/multiTalents")
+    fun getStuff(): List<PersonAndHisMovies> {
+        movieRepository.findAll().forEach {movie ->
+            persons.getOrPut(movie.director, {PersonAndHisMovies(movie.director)}).director.add(movie.name)
+            persons.getOrPut(movie.writer, {PersonAndHisMovies(movie.writer)}).writer.add(movie.name)
+            persons.getOrPut(movie.star, {PersonAndHisMovies(movie.star)}).star.add(movie.name)
+        }
+        return persons.values.filter {
+            var cnt = 3
+            if (it.director.isEmpty()) --cnt
+            if (it.star.isEmpty()) --cnt
+            if (it.writer.isEmpty()) --cnt
+            cnt >1
+        }.sortedByDescending { it.director.size + it.star.size + it.writer.size }
+    }
+
 }

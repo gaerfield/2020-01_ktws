@@ -2,9 +2,11 @@
 Koans for a kotlin-workshop
 
 * slides in [gaerfield/2018-04-26_Kotlin_jug-gr](https://gaerfield.github.io/2018-04-26_Kotlin_jug-gr/kotlin/index.html#/)
-* Movie-Database obtained from [danielgrijalva/movie-stats](https://github.com/danielgrijalva/movie-stats)
+* Movie-Database in this project obtained from [danielgrijalva/movie-stats](https://github.com/danielgrijalva/movie-stats)
+* alternative training-data - (14 Best Movie Datasets for Machine Learning)[https://lionbridge.ai/datasets/movie-datasets-machine-learning/]
 * do practice with [Kotlin-Koans](https://play.kotlinlang.org/koans/Introduction/Hello,%20world!/Task.kt)
-* stuff on [couroutines](https://kotlinlang.org/docs/reference/coroutines/basics.html)
+* [couroutines](https://kotlinlang.org/docs/reference/coroutines/basics.html)
+* [scope-functions (let, with, run, etc ...)](https://kotlinlang.org/docs/reference/scope-functions.html#function-selection)
 
 After succesful start of the app, you can visit:
 * **database**: http://localhost:8080/h2-console
@@ -36,8 +38,8 @@ A single release of music, comprising several tracks
 
 ## Create some new REST-Services
 
-We have Movie-Database and want some new REST-Services giving us insight to trivial infos. Create some new Services in "MovieService", for example:  
-* group by rating (0-1, 1-2, 1-3, etc.) and give a count of movies within this groups
+We have Movie-Database and want to gather some trivial infos. Create some new Services in "MovieService", and collect for example:  
+* movies group by rating (0-1, 1-2, 1-3, etc.) and give a count of movies within this groups
 * top 10 studios by number of productions
 * directors grouped by number of productions with top 3 by average score, i.e.:
 ```string
@@ -46,4 +48,11 @@ directors with 5 movies:
 directors with 4 movies: ..
 ```
 * do the previous task with least avg-score instead
-* which persons (actors, writers, directors) have acted in multiple roles for the same or for different movies
+* which persons (actors, writers, directors) have acted in multiple roles for the same or for different movies, i.e.:
+```string
+Woody Allen:
+    Writer: Scoop, Midnight in Paris 
+    Actor: Scoop
+    Director: Scoop
+...
+```
