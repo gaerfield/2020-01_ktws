@@ -4,6 +4,7 @@ Koans for a kotlin-workshop
 * slides in [gaerfield/2018-04-26_Kotlin_jug-gr](https://gaerfield.github.io/2018-04-26_Kotlin_jug-gr/kotlin/index.html#/)
 * Movie-Database obtained from [danielgrijalva/movie-stats](https://github.com/danielgrijalva/movie-stats)
 * do practice with [Kotlin-Koans](https://play.kotlinlang.org/koans/Introduction/Hello,%20world!/Task.kt)
+* stuff on [couroutines](https://kotlinlang.org/docs/reference/coroutines/basics.html)
 
 After succesful start of the app, you can visit:
 * **database**: http://localhost:8080/h2-console
