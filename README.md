@@ -11,6 +11,7 @@ further self-studying kotlin-links:
 * [scope-functions (let, with, run, etc ...)](https://kotlinlang.org/docs/reference/scope-functions.html#function-selection)
 * [idiomatic kotlin](https://phauer.com/2017/idiomatic-kotlin-best-practices/)
 * [support in spring for kotlin](https://docs.spring.io/spring/docs/current/spring-framework-reference/languages.html#languages) - very important to read
+* [mixit](https://github.com/mixitconf/mixit) example-app contains all the hypes: kotlin, spring, reactive-api, mongo, gradle, junit-tests
 
 After succesful start of the app, you can visit:
 * **database**: http://localhost:8080/h2-console
