@@ -33,6 +33,14 @@ internal class MovieService(
     @PutMapping("/config")
     fun updateApplicationConfig(@RequestParam filterAdultRating: Boolean) { appConfig.filterAdultRating = filterAdultRating }
 
+    @GetMapping("/usingObjectDuringMapping")
+    fun usingObjectDuringMapping() = movieRepository.findAll()
+            .map { object { val name = it.name; val bla = it.star } } // <- look here
+            .groupBy { it.bla }
+            .map { (k,v) -> k to v.map { it.name } }
+            .take(10)
+            .toMap()
+
 
     data class PersonAndHisMovies(val name: String) {
         val director = mutableSetOf<String>()

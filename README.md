@@ -4,9 +4,13 @@ Koans for a kotlin-workshop
 * slides in [gaerfield/2018-04-26_Kotlin_jug-gr](https://gaerfield.github.io/2018-04-26_Kotlin_jug-gr/kotlin/index.html#/)
 * Movie-Database in this project obtained from [danielgrijalva/movie-stats](https://github.com/danielgrijalva/movie-stats)
 * alternative training-data - [14 Best Movie Datasets for Machine Learning](https://lionbridge.ai/datasets/movie-datasets-machine-learning/)
+
+further self-studying kotlin-links:
 * do practice with [Kotlin-Koans](https://play.kotlinlang.org/koans/Introduction/Hello,%20world!/Task.kt)
 * [couroutines](https://kotlinlang.org/docs/reference/coroutines/basics.html)
 * [scope-functions (let, with, run, etc ...)](https://kotlinlang.org/docs/reference/scope-functions.html#function-selection)
+* [idiomatic kotlin](https://phauer.com/2017/idiomatic-kotlin-best-practices/)
+* [support in spring for kotlin](https://docs.spring.io/spring/docs/current/spring-framework-reference/languages.html#languages) - very important to read
 
 After succesful start of the app, you can visit:
 * **database**: http://localhost:8080/h2-console
